@@ -59,7 +59,7 @@ jobs:
   build-and-scan:
     name: Build and analyze
     runs-on: ubuntu-24.04            # Explicit runner version for reproducibility
-    timeout-minutes: 120              # Cap wall‑clock time for the job
+    timeout-minutes: 200              # Cap wall‑clock time for the job
     permissions:
       contents: read                 # Read‑only; no secret write scopes here
     env:
@@ -104,7 +104,7 @@ jobs:
           build-wrapper-linux-x86-64 --out-dir "${BW_OUT}" \
             sh -c 'make'
             # sh -c 'gcc -std=c17 -I. -O2 -g main.c -o main'
-        timeout-minutes: 120
+        timeout-minutes: 200
 
       # Fail fast if the wrapper didn't produce the expected file
       - name: Verify compile_commands.json exists
