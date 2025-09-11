@@ -1,7 +1,8 @@
 CC=/usr/bin/gcc
 CPP=/usr/bin/g++
 DEBUG=-g
-CFLAGS=-c
+#CFLAGS=-c
+CFLAGS=-c -std=c++14
 LFLAGS=-lpthread -lm
 LD=ld
 INCLUDE_MAIN=-DINCLUDEMAIN
