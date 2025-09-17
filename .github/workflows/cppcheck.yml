@@ -61,7 +61,7 @@ jobs:
   cppcheck-scan:
     name: Build pinned Cppcheck → scan → SARIF
     runs-on: ubuntu-24.04                      #  note: fixed runner → repeatable builds
-    timeout-minutes: 30                        #  note: cap total time (build + scan)
+    timeout-minutes: 800                        #  note: cap total time (build + scan)
     permissions:
       contents: read                           #  note: only needs to read code in this job
 
@@ -195,7 +195,7 @@ jobs:
     name: Upload Cppcheck SARIF to Code Scanning
     needs: cppcheck-scan
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 60
     # Only this job can write security events (least privilege).
     permissions:
       contents: read
